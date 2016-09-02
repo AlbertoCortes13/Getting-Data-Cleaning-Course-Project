@@ -50,3 +50,7 @@ extracts <- data[grep("[Mm][e][a][n]|[s][t][d]", names(data), value = TRUE)]
 ##5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 avg <- aggregate(.~data$activityname, data, mean)
+
+
+##Write data from avg in a .txt file
+write.table(avg, "tidy.txt", row.name = FALSE)
